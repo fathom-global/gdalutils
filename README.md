@@ -8,7 +8,7 @@
 
 Just run this line after installing all dependencies
 
-``` pip install git+https://github.com/jsosa/gdalutils.git```
+``` pip install git+https://github.com/fathom-global/gdalutils.git```
 
 ### Dependencies
 - [GDAL](https://www.gdal.org/)
@@ -35,7 +35,7 @@ Geographical information can be read via
 gu.get_geo(filename)
 ```
 
-it'll return a Pyhton `list` containing
+it'll return a Python `list` containing
 
 1. xmin
 2. ymin
@@ -57,12 +57,4 @@ gu.write_raster(myarray, myraster, geo, fmt, nodata)
 ```
 
 Where `myarray` is a `numpy.array` object, `myraster` is a filename output, `geo` is a list with geographical information identical to the one obtained with `gu.get_geo`, `fmt` is the format output: `'Float32'`, `'Float64'`, etc and `nodata` is the NODATA value
-
-Passing from a `numpy.array` object to a `pandas.Dataframe` object is posible by
-
-```python
-array_to_pandas(dat, geo, val, symbol)
-```
-
-where `dat` is the n`umpy.array` object, `geo` is the list containing geographical information, `val` is a value to be masked and `symbol` is the logical symbol to be applied
 
