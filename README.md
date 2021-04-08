@@ -1,5 +1,3 @@
-[![DOI](https://zenodo.org/badge/120902554.svg)](https://zenodo.org/badge/latestdoi/120902554)
-
 # gdalutils
 
 `gdalutils` is a small library to handle GDAL-based raster files
