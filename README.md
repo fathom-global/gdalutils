@@ -11,9 +11,6 @@ Just run this line after installing all dependencies
 ``` pip install git+https://github.com/jsosa/gdalutils.git```
 
 ### Dependencies
-
-- [Geopandas](http://geopandas.org/)
-- [Cython](https://cython.org/)
 - [GDAL](https://www.gdal.org/)
 
 ### Usage
@@ -69,8 +66,3 @@ array_to_pandas(dat, geo, val, symbol)
 
 where `dat` is the n`umpy.array` object, `geo` is the list containing geographical information, `val` is a value to be masked and `symbol` is the logical symbol to be applied
 
-Passing from pandas to array is also possible via
-
-```python
-pandas_to_array(df, geo, nodata)
-```
