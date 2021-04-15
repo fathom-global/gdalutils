@@ -19,6 +19,15 @@ def get_dataxy(filename, x, y, nx, ny):
     ds = None
     return data
 
+def get_nodata(filename):
+    """ Get nodata value from a geotif file
+        Takes nodata from first raster band in file
+    """
+
+    ds = gdal.Open(filename, gdal.GA_ReadOnly)
+    band = ds.GetRasterBand(1)
+    return band.GetNoDataValue()
+
 
 def get_data(filename):
     """ Import gdal data in a numpy array """
