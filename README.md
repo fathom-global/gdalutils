@@ -51,8 +51,8 @@ it'll return a Python `list` containing
 Writing `numpy.array` object is posible by calling
 
 ```python
-gu.write_raster(myarray, myraster, geo, fmt, nodata)
+gu.write_raster(myarray, myraster, geo, fmt, nodata, bigtiff)
 ```
 
-Where `myarray` is a `numpy.array` object, `myraster` is a filename output, `geo` is a list with geographical information identical to the one obtained with `gu.get_geo`, `fmt` is the format output: `'Float32'`, `'Float64'`, etc and `nodata` is the NODATA value
+Where `myarray` is a `numpy.array` object, `myraster` is a filename output, `geo` is a list with geographical information identical to the one obtained with `gu.get_geo`, `fmt` is the format output: `'Float32'`, `'Float64'`, etc, `nodata` is the NODATA value and `bigtiff` is a boolean for BIGTIFF support
 
