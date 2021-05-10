@@ -69,7 +69,7 @@ def get_geo(filename, proj4=None):
     return geo
 
 
-def write_raster(myarray, myraster, geo, fmt, nodata):
+def write_raster(myarray, myraster, geo, fmt, nodata, bigtiff=False):
     """ Write an array to Raster format defaul in GTiff format"""
 
     # available data types:
@@ -98,8 +98,10 @@ def write_raster(myarray, myraster, geo, fmt, nodata):
 
     driver = gdal.GetDriverByName('GTiff')
 
-    outRaster = driver.Create(myraster, int(
-        nx), int(ny), 1, ofmt, ['COMPRESS=LZW'])
+    if bigtiff:
+        outRaster = driver.Create(myraster, int(nx), int(ny), 1, ofmt, ['COMPRESS=DEFLATE','BIGTIFF=YES'])
+    else:
+        outRaster = driver.Create(myraster, int(nx), int(ny), 1, ofmt, ['COMPRESS=DEFLATE'])
 
     outRaster.SetGeoTransform((xmin, resx, 0, ymax, 0, resy))
     outRaster.SetProjection(srs.ExportToWkt())
